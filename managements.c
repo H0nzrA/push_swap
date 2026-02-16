@@ -6,13 +6,13 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:10:34 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 09:22:03 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/16 09:48:49 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error()
+void	error(void)
 {
 	ft_putendl_fd("Error", 2);
 	exit(EXIT_FAILURE);
@@ -20,15 +20,14 @@ void	error()
 
 int	evaluate_arguments(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
-		int	temp;
-
-		temp = ft_atoi(argv[i]);
-		if (temp)
+		if (!is_all_digit(argv[i]))
+			return (0);
+		i++;
 	}
 	return (1);
 }

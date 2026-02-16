@@ -9,4 +9,6 @@ void	error(void);
 
 int		evaluate_arguments(int argc, char **argv);
 
+int		is_all_digit(const char *str);
+
 #endif
