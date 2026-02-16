@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:45:49 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 13:34:10 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/16 17:41:03 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	is_valid_digit(const char *str)
 	long	val;
 
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
+	if ((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1]))
 		i++;
 	while (str[i])
 	{
