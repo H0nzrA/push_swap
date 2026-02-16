@@ -6,15 +6,20 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:07:41 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 09:48:06 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/16 13:39:18 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf/libft/libft.h"
 
-void	push_swap(int argc, char **argv)
+void	parsing(t_list **list, char *str)
 {
-	if (!evaluate_arguments(argc, argv))
+	if (!is_valid_digit(str))
+	{
+		ft_lstclear(list, free);
 		error();
-	ft_printf("Tout est ok\n");
+	}
+	t_list *l = ft_lstnew(str);
+	ft_lstadd_back(list, l);
 }

@@ -4,11 +4,21 @@
 # include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 
-void	push_swap(int argc, char **argv);
+typedef enum e_strat
+{
+	ADAPTIVE,
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+}		t_strat;
+
+void	parsing(t_list **list, char *str);
 void	error(void);
 
-int		evaluate_arguments(int argc, char **argv);
+int		is_valid_digit(const char *str);
+int		is_strategy(const char *str);
+t_strat	get_strategy(const char *str);
 
-int		is_all_digit(const char *str);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

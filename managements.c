@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:10:34 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 09:48:49 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/16 12:48:08 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,20 @@ void	error(void)
 
 int	evaluate_arguments(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	int		have_strat;
+	t_strat	strategy;
 
 	i = 1;
+	have_strat = 0;
+	if (is_strategy(argv[i]))
+	{
+		strategy = get_strategy(argv[i]);
+		i++;
+	}
 	while (i < argc)
 	{
-		if (!is_all_digit(argv[i]))
+		if (!is_valid_digit(argv[i]))
 			return (0);
 		i++;
 	}
