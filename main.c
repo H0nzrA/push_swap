@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:15 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 17:48:04 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:51:37 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	t_strat	strat;
 	t_list	*list;
 	int		i;
-	t_list	*temp;
 
 	if (argc < 2)
 		error();
@@ -32,12 +31,31 @@ int	main(int argc, char **argv)
 		parsing(&list, argv[i]);
 		i++;
 	}
-	temp = list;
+
+	t_list *element = NULL;
+	t_list *temp;
+
+	temp = element;
+	ft_printf("Avant push:\n");
 	while (temp)
 	{
-		ft_printf("%s\n", temp->content);
+		ft_printf("%s | ", (char *)temp->content);
+		temp = temp->next;
+	}
+
+	push(&list, &element);
+	push(&list, &element);
+	push(&list, &element);
+	push(&list, &element);
+	ft_printf("\n---------------------\n");
+	temp = element;
+	ft_printf("Apres push:\n");
+	while (temp)
+	{
+		ft_printf("%s | ", (char *)temp->content);
 		temp = temp->next;
 	}
 	ft_lstclear(&list, free);
+	ft_lstclear(&element, free);
 	return (0);
 }

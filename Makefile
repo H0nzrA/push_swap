@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/16 09:10:42 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/17 11:23:46 by tiana-an         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ C_MAGNETA	= \033[035m
 DIR_LIB			= ft_printf
 LIBFTPRINTF		= $(DIR_LIB)/libftprint.a
 
-MANDATORY = main push_swap utils managements
+MANDATORY = main push_swap utils managements \
+			command_push_swap command_rotate command_reverse
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
