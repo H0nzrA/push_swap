@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/17 13:54:51 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/17 17:34:31 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ typedef enum e_strat
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
-}	t_strat;
+}		t_strat;
 
-void parsing(t_list **list, char *str);
-void error(void);
+void	start_algo(t_list **list, t_strat strategy);
+
+void	parsing(t_list **list, char *str);
+void	error(void);
 
 int		is_valid_digit(const char *str);
 int		is_strategy(const char *str);
@@ -41,6 +43,8 @@ void	rotate_ab(t_list **a, t_list **b);
 void	rotate(t_list **list);
 
 void	reverse_rotate(t_list **list);
-void	reverse_rotate_ab(t_list **list);
+void	reverse_rotate_ab(t_list **a, t_list **b);
+
+void	minmax_sort(t_list **A, t_list **B);
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: tiana-an <tiana-an@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:55:09 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/17 14:03:40 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/17 14:11:25 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 void	reverse_rotate_ab(t_list **a, t_list **b)
@@ -21,17 +22,21 @@ void	reverse_rotate_ab(t_list **a, t_list **b)
 
 void	reverse_rotate(t_list **list)
 {
-	t_list *temp;
-	t_list *temp2;
-	t_list *key;
+	t_list *last;
+	t_list	*temp;
 
-	temp = ft_lstlast(*list);
-	key = *list;
-	while (key)
+	last = ft_lstlast(*list);
+	temp = *list;
+	while (temp)
 	{
-		temp2 = key;
-		key = key->next;
-		if (key && key->next)
+		if (temp->next == last)
+		{
+			temp->next = NULL;
+			break ;
+		}
+		temp = temp->next;
 	}
+	last->next = *list;
+	*list = last;
 }
 
