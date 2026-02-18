@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 04:38:16 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:04:25 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,37 +68,18 @@ static void	do_part(t_list **list)
 	}
 }
 
-void	minmax_sort(t_list **A)
+void	minmax_sort(t_list **stack_a, t_list **stack_b)
 {
-	t_list *temp;
-	t_list	*temp1;
-
-	temp = NULL;
-	temp1 = *A;
-
-	while (temp1)
+	*stack_b = NULL;
+	while (*stack_a)
 	{
-		do_part(&temp1);
-		push(&temp1, &temp);
+		do_part(stack_a);
+		push(stack_a, stack_b);
 		ft_printf("pb\n");
 	}
-	while (temp)
+	while (*stack_b)
 	{
-		push(&temp, &temp1);
+		push(stack_b, stack_a);
 		ft_printf("pa\n");
 	}
-	// ft_printf("\napres algo:\nA:");
-	// while (temp1)
-	// {
-	// 	ft_printf("  %s  |", temp1->content);
-	// 	temp1 = temp1->next;
-	// }
-	// ft_lstclear(&temp1, free);
-	// ft_printf("\n===========\nB:");
-	// while (temp)
-	// {
-	// 	ft_printf("  %s  |", temp->content);
-	// 	temp = temp->next;
-	// }
-	ft_lstclear(&temp, free);
 }

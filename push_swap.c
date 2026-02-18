@@ -6,11 +6,12 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:07:41 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 04:00:14 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:03:26 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf/libft/libft.h"
 
 void	parsing(t_list **list, char *str)
 {
@@ -38,7 +39,10 @@ void	parsing(t_list **list, char *str)
 
 void	start_algo(t_list **list, t_strat strategy)
 {
+	t_list *stack_b;
 
+	stack_b = NULL;
 	if (strategy == SIMPLE)
-		minmax_sort(list);
+		minmax_sort(list, &stack_b);
+	ft_lstclear(&stack_b, free);
 }

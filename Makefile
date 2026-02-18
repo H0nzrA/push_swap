@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/17 17:10:11 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/18 11:32:28 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBFTPRINTF		= $(DIR_LIB)/libftprint.a
 
 MANDATORY = main push_swap utils managements \
 			command_push_swap command_rotate command_reverse \
-			minmax_sort
+			minmax_sort compute_disorder
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
