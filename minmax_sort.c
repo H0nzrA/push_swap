@@ -6,11 +6,10 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 14:59:06 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/18 16:51:35 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
@@ -38,7 +37,7 @@ static int	find_min_index(t_list **list)
 	return (index);
 }
 
-static void	do_part(t_list **list)
+static void	do_part(t_list **list, char **all_commands)
 {
 	int	index;
 	int	size;
@@ -52,7 +51,7 @@ static void	do_part(t_list **list)
 		while (index > 0)
 		{
 			rotate(list);
-			ft_printf("ra\n");
+			take_command(all_commands, "ra");
 			index = find_min_index(list);
 		}
 		return ;
@@ -60,25 +59,25 @@ static void	do_part(t_list **list)
 	while (index < size - 1)
 	{
 		reverse_rotate(list);
-		ft_printf("rra\n");
+		take_command(all_commands, "rra");
 		index = find_min_index(list);
 	}
 	reverse_rotate(list);
-	ft_printf("rra\n");
+	take_command(all_commands, "rra");
 }
 
-void	minmax_sort(t_list **stack_a, t_list **stack_b)
+void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands)
 {
 	*stack_b = NULL;
 	while (*stack_a)
 	{
-		do_part(stack_a);
+		do_part(stack_a, all_commands);
 		push(stack_a, stack_b);
-		ft_printf("pb\n");
+		take_command(all_commands, "pb");
 	}
 	while (*stack_b)
 	{
 		push(stack_b, stack_a);
-		ft_printf("pa\n");
+		take_command(all_commands, "pa");
 	}
 }
