@@ -20,7 +20,7 @@ void	rotate_ab(t_list **a, t_list **b)
 
 void	rotate(t_list **list)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *list;
 	*list = temp->next;

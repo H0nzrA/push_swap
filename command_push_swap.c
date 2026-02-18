@@ -20,12 +20,11 @@ void	swap_ab(t_list **a, t_list **b)
 
 void	swap(t_list **list)
 {
-	t_list *first;
-	t_list *second;
+	t_list	*first;
+	t_list	*second;
 
 	first = *list;
 	second = first->next;
-
 	first->next = second->next;
 	second->next = first;
 	*list = second;
@@ -33,8 +32,8 @@ void	swap(t_list **list)
 
 void	push(t_list **a, t_list **b)
 {
-	t_list *first_a;
-	t_list *next_a;
+	t_list	*first_a;
+	t_list	*next_a;
 
 	first_a = *a;
 	next_a = first_a->next;

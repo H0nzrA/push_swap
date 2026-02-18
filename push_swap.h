@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 11:31:41 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:28:23 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef enum e_strat
 }		t_strat;
 
 void	start_algo(t_list **list, t_strat strategy);
+int		compute_disorder(t_list **list);
 
 void	parsing(t_list **list, char *str);
 void	error(void);
@@ -45,7 +46,7 @@ void	rotate(t_list **list);
 void	reverse_rotate(t_list **list);
 void	reverse_rotate_ab(t_list **a, t_list **b);
 
-int		compute_disorder(t_list **list);
+void	inversion(t_list **stack_a, t_list **stack_b);
 void	minmax_sort(t_list **stack_a, t_list **stack_b);
 
 #endif

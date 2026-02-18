@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 11:04:25 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:59:06 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static int	find_min_index(t_list **list)
 	}
 	return (index);
 }
+
 static void	do_part(t_list **list)
 {
 	int	index;
@@ -54,18 +55,16 @@ static void	do_part(t_list **list)
 			ft_printf("ra\n");
 			index = find_min_index(list);
 		}
+		return ;
 	}
-	else
+	while (index < size - 1)
 	{
-		while (index < size - 1)
-		{
-			reverse_rotate(list);
-			ft_printf("rra\n");
-			index = find_min_index(list);
-		}
 		reverse_rotate(list);
 		ft_printf("rra\n");
+		index = find_min_index(list);
 	}
+	reverse_rotate(list);
+	ft_printf("rra\n");
 }
 
 void	minmax_sort(t_list **stack_a, t_list **stack_b)
