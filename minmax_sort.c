@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minmax_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/17 17:44:09 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/18 04:38:16 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int	find_min_index(t_list **list)
 	}
 	return (index);
 }
-
 static void	do_part(t_list **list)
 {
 	int	index;
@@ -47,41 +46,59 @@ static void	do_part(t_list **list)
 	index = find_min_index(list);
 	size = ft_lstsize(*list);
 	part = size / 2;
-	if (index > 0)
+	if (index <= part)
 	{
 		while (index > 0)
 		{
 			rotate(list);
+			ft_printf("ra\n");
 			index = find_min_index(list);
 		}
 	}
 	else
 	{
-		while (index < size)
+		while (index < size - 1)
 		{
 			reverse_rotate(list);
+			ft_printf("rra\n");
 			index = find_min_index(list);
 		}
+		reverse_rotate(list);
+		ft_printf("rra\n");
 	}
 }
 
-void	minmax_sort(t_list **A, t_list **B)
+void	minmax_sort(t_list **A)
 {
-	// int	index;
-	//
-	// t_list *temp;
-	//
-	// temp = *A;
-	// while (temp)
+	t_list *temp;
+	t_list	*temp1;
+
+	temp = NULL;
+	temp1 = *A;
+
+	while (temp1)
+	{
+		do_part(&temp1);
+		push(&temp1, &temp);
+		ft_printf("pb\n");
+	}
+	while (temp)
+	{
+		push(&temp, &temp1);
+		ft_printf("pa\n");
+	}
+	// ft_printf("\napres algo:\nA:");
+	// while (temp1)
 	// {
-	// 	index = find_min_index(&temp);
-	// 	do_part(&temp);
-	// 	push(&temp, B);
+	// 	ft_printf("  %s  |", temp1->content);
+	// 	temp1 = temp1->next;
 	// }
-	// temp = *B;
+	// ft_lstclear(&temp1, free);
+	// ft_printf("\n===========\nB:");
 	// while (temp)
 	// {
-	// 	ft_printf("%s | ", temp->content);
+	// 	ft_printf("  %s  |", temp->content);
 	// 	temp = temp->next;
 	// }
+	ft_lstclear(&temp, free);
 }

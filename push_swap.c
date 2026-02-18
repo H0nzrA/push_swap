@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:07:41 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/17 17:35:18 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/18 04:00:14 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ void	parsing(t_list **list, char *str)
 
 void	start_algo(t_list **list, t_strat strategy)
 {
-	t_list *B;
 
-	B = NULL;
 	if (strategy == SIMPLE)
-		minmax_sort(list, &B);
-	ft_lstclear(&B, free);
+		minmax_sort(list);
 }

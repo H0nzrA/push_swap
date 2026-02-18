@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/17 17:34:31 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/18 00:34:25 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void	rotate(t_list **list);
 void	reverse_rotate(t_list **list);
 void	reverse_rotate_ab(t_list **a, t_list **b);
 
-void	minmax_sort(t_list **A, t_list **B);
+void	minmax_sort(t_list **A);
 
 #endif
