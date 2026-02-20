@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 16:51:35 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:38:54 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands)
 	*stack_b = NULL;
 	while (*stack_a)
 	{
+		if (ft_lstsize(*stack_a) == 1)
+			break ;
 		do_part(stack_a, all_commands);
 		push(stack_a, stack_b);
 		take_command(all_commands, "pb");
