@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:15 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 14:56:23 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:17:41 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,11 @@ int	main(int argc, char **argv)
 {
 	t_strat	strat;
 	t_list	*list;
-	int		i;
 
 	if (argc < 2)
 		error();
-	strat = ADAPTIVE;
-	i = 1;
-	if (is_strategy(argv[i]))
-		strat = get_strategy(argv[i++]);
 	list = NULL;
-	while (i < argc)
-	{
-		parsing(&list, argv[i]);
-		i++;
-	}
+	parsing(&list, &argv[1], &strat);
 	if (ft_lstsize(list) < 2)
 		return (0);
 	start_algo(&list, strat);

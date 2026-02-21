@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 15:51:02 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:17:23 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef enum e_strat
 void	start_algo(t_list **list, t_strat strategy);
 int		compute_disorder(t_list **list);
 
-void	parsing(t_list **list, char *str);
+void	parsing(t_list **list, char **argv, t_strat *strat);
 void	error(void);
 
 int		is_valid_digit(const char *str);

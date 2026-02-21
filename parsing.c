@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 15:45:49 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:19:25 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	is_valid_arguments(char **res)
 	i = 0;
 	while (res[i] != NULL)
 	{
-		if (!is_valid_digit(res[i]))
+		if (!is_valid_digit(res[i]) && !is_strategy(res[i]))
 			return (0);
 		i++;
 	}
@@ -53,53 +53,58 @@ static int	have_duplicate(t_list **list, int num)
 	return (0);
 }
 
-static void	get_argument(t_list **list, char **res)
+static void	get_argument(t_list **list, char **res, t_strat *strat)
 {
-	t_list	*temp;
-	int		i;
-	int		num;
-	int		*val;
+	int	i;
+	int	*val;
+	int	have_strat;
 
-	i = 0;
-	while (res[i])
+	i = -1;
+	have_strat = 0;
+	while (res[++i])
 	{
-		temp = *list;
-		num = ft_atoi(res[i]);
-		if (have_duplicate(list, num))
+		if (is_strategy(res[i]) && !have_strat)
 		{
+			*strat = get_strategy(res[i]);
+			have_strat = 1;
+			continue ;
+		}
+		val = (int *)malloc(sizeof(int));
+		if (!val || have_duplicate(list, ft_atoi(res[i])))
+		{
+			if (val)
+				free(val);
 			ft_lstclear(list, free);
 			error();
 		}
-		val = (int *)malloc(sizeof(int));
-		if (!val)
-		{
-			ft_lstclear(list, free);
-			return ;
-		}
-		*val = num;
+		*val = ft_atoi(res[i]);
 		ft_lstadd_back(list, ft_lstnew(val));
-		i++;
 	}
 }
 
-void	parsing(t_list **list, char *str)
+void	parsing(t_list **list, char **argv, t_strat *strat)
 {
 	char	**res;
 	int		i;
+	int		k;
 
-	res = parse_arguments(str);
-	if (!is_valid_arguments(res))
+	k = -1;
+	while (argv[++k] != NULL)
 	{
+		res = parse_arguments(argv[k]);
+		if (!is_valid_arguments(res))
+		{
+			i = 0;
+			while (res[i])
+				free(res[i++]);
+			free(res);
+			ft_lstclear(list, free);
+			error();
+		}
+		get_argument(list, res, strat);
 		i = 0;
 		while (res[i])
 			free(res[i++]);
 		free(res);
-		ft_lstclear(list, free);
-		error();
 	}
-	get_argument(list, res);
-	i = 0;
-	while (res[i])
-		free(res[i++]);
-	free(res);
 }
