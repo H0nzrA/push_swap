@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:45:49 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 17:41:03 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:42:18 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,20 @@ long	ft_atoi_long(const char *str)
 	return (val * sign);
 }
 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+
 int	is_valid_digit(const char *str)
 {
 	int		i;
@@ -58,20 +72,6 @@ int	is_valid_digit(const char *str)
 	if (val > 2147483647 || val < -2147483648)
 		return (0);
 	return (1);
-}
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
 }
 
 int	is_strategy(const char *str)

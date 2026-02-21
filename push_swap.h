@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 17:17:23 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:44:56 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,19 @@ typedef enum e_strat
 	COMPLEX,
 }		t_strat;
 
-void	start_algo(t_list **list, t_strat strategy);
+void	start_algo(t_list **list, t_strat strategy, int *bench_state);
 int		compute_disorder(t_list **list);
 
-void	parsing(t_list **list, char **argv, t_strat *strat);
+void	parsing(t_list **list, char **argv, t_strat *strat, int *bench);
 void	error(void);
 
 int		is_valid_digit(const char *str);
 int		is_strategy(const char *str);
+int		is_benchmark(const char *str);
+int		have_bench(const char **argv);
 t_strat	get_strategy(const char *str);
 
+long	ft_atoi_long(const char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 
 void	swap(t_list **list);
@@ -47,6 +50,7 @@ void	reverse_rotate(t_list **list);
 void	reverse_rotate_ab(t_list **a, t_list **b);
 
 void	take_command(char **all_commands, char *command);
+void	print_command(const char *all_commands, int *bench);
 
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
 void	radix_lsd_sort(t_list **stack_a, t_list **stack_b, char **all_commands);

@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 17:34:15 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 17:41:10 by trakotoz         ###   ########.fr       */
+/*   Created: 2026/02/21 17:42:31 by trakotoz          #+#    #+#             */
+/*   Updated: 2026/02/21 17:45:24 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	is_benchmark(const char *str)
 {
-	t_strat	strat;
-	t_list	*list;
-
-	if (argc < 2)
-		error();
-	list = NULL;
-	int bench = 0;
-	parsing(&list, &argv[1], &strat, &bench);
-	if (ft_lstsize(list) < 2)
-		return (0);
-	start_algo(&list, strat, &bench);
-	ft_lstclear(&list, free);
+	if (ft_strcmp(str, "--bench") == 0)
+		return (1);
 	return (0);
+}
+
+int	have_bench(const char **argv)
+{
+	int	i;
+
+	i = -1;
+	while (argv[++i])
+		if (is_benchmark(argv[i]))
+			return (1);
+	return (0);
+}
+
+void	print_command(const char *all_commands, int *bench)
+{
+	if (!*bench)
+		ft_printf("%s", all_commands);
 }

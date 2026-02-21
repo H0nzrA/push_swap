@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 17:19:25 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:40:37 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int	is_valid_arguments(char **res)
 	i = 0;
 	while (res[i] != NULL)
 	{
-		if (!is_valid_digit(res[i]) && !is_strategy(res[i]))
+		if (!is_valid_digit(res[i]) && !is_strategy(res[i])
+			&& !is_benchmark(res[i]))
 			return (0);
 		i++;
 	}
@@ -82,7 +83,7 @@ static void	get_argument(t_list **list, char **res, t_strat *strat)
 	}
 }
 
-void	parsing(t_list **list, char **argv, t_strat *strat)
+void	parsing(t_list **list, char **argv, t_strat *strat, int *bench)
 {
 	char	**res;
 	int		i;
@@ -101,6 +102,8 @@ void	parsing(t_list **list, char **argv, t_strat *strat)
 			ft_lstclear(list, free);
 			error();
 		}
+		if (have_bench((const char **)res))
+			*bench = 1;
 		get_argument(list, res, strat);
 		i = 0;
 		while (res[i])
