@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:27:54 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 13:55:59 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:49:53 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	compute_disorder(t_list **list)
 		while (j)
 		{
 			total_pair++;
-			if (ft_atoi(i->content) > ft_atoi(j->content))
+			if (*(int *)(i->content) > *(int *)(j->content))
 				mistakes++;
 			j = j->next;
 		}

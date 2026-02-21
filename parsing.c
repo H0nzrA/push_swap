@@ -6,10 +6,11 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 17:35:05 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:45:49 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 static char	**parse_arguments(char *str)
@@ -38,37 +39,45 @@ static int	is_valid_arguments(char **res)
 	return (1);
 }
 
-static void	free_split(char **res)
+static int	have_duplicate(t_list **list, int num)
 {
-	int	i;
+	t_list	*temp;
 
-	i = 0;
-	while (res[i])
-		free(res[i++]);
-	free(res);
+	temp = *list;
+	while (temp)
+	{
+		if (*(int *)(temp->content) == num)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
 }
 
 static void	get_argument(t_list **list, char **res)
 {
-	t_list	*l;
 	t_list	*temp;
 	int		i;
+	int		num;
+	int		*val;
 
 	i = 0;
 	while (res[i])
 	{
 		temp = *list;
-		while (temp)
+		num = ft_atoi(res[i]);
+		if (have_duplicate(list, num))
 		{
-			if (ft_atoi((char *)temp->content) == ft_atoi((char *)res[i]))
-			{
-				ft_lstclear(list, free);
-				error();
-			}
-			temp = temp->next;
+			ft_lstclear(list, free);
+			error();
 		}
-		l = ft_lstnew(ft_strdup(res[i]));
-		ft_lstadd_back(list, l);
+		val = (int *)malloc(sizeof(int));
+		if (!val)
+		{
+			ft_lstclear(list, free);
+			return ;
+		}
+		*val = num;
+		ft_lstadd_back(list, ft_lstnew(val));
 		i++;
 	}
 }
@@ -76,14 +85,21 @@ static void	get_argument(t_list **list, char **res)
 void	parsing(t_list **list, char *str)
 {
 	char	**res;
+	int		i;
 
 	res = parse_arguments(str);
 	if (!is_valid_arguments(res))
 	{
-		free_split(res);
+		i = 0;
+		while (res[i])
+			free(res[i++]);
+		free(res);
 		ft_lstclear(list, free);
 		error();
 	}
 	get_argument(list, res);
-	free_split(res);
+	i = 0;
+	while (res[i])
+		free(res[i++]);
+	free(res);
 }

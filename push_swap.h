@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/18 16:53:28 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:51:02 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void	reverse_rotate_ab(t_list **a, t_list **b);
 void	take_command(char **all_commands, char *command);
 
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
+void	radix_lsd_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
 
 #endif

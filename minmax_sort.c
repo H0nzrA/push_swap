@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/20 16:38:54 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:50:17 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static int	find_min_index(t_list **list)
 	t_list	*temp;
 
 	temp = *list;
-	min = ft_atoi(temp->content);
+	min = *(int *)(temp->content);
 	index = 0;
 	i = 0;
 	while (temp)
 	{
-		if (min > ft_atoi(temp->content))
+		if (min > *(int *)(temp->content))
 		{
-			min = ft_atoi(temp->content);
+			min = *(int *)(temp->content);
 			index = i;
 		}
 		temp = temp->next;
