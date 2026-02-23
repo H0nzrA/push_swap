@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:47:57 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/23 13:20:15 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/23 15:15:02 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 static t_list	*ft_cpy(t_list *argv)
 {
 	t_list	*copy;
+    int *var;
 
 	copy = NULL;
 	while (argv)
 	{
-		ft_lstadd_back(&copy, ft_lstnew(ft_strdup(argv->content)));
+        var = (int *)malloc(sizeof(int));
+        *var = *(int *)argv->content;
+		ft_lstadd_back(&copy, ft_lstnew(var));
 		argv = argv->next;
 	}
 	return (copy);
@@ -42,7 +45,7 @@ static t_list	*ft_sort(t_list *argv)
 		tmpy = tmp->next;
 		while (tmpy)
 		{
-			if (ft_atoi((char *)tmp->content) > ft_atoi((char *)tmpy->content))
+			if (*(int *)tmp->content > *(int *)tmpy->content)
 			{
 				key = tmp->content;
 				tmp->content = tmpy->content;
@@ -63,14 +66,14 @@ static int	find_max_index(t_list **list)
 	t_list	*temp;
 
 	temp = *list;
-	max = ft_atoi(temp->content);
+	max = *(int *)temp->content;
 	index = 0;
 	i = 0;
 	while (temp)
 	{
-		if (max < ft_atoi(temp->content))
+		if (max < *(int *)temp->content)
 		{
-			max = ft_atoi(temp->content);
+			max = *(int *)temp->content;
 			index = i;
 		}
 		temp = temp->next;
@@ -100,7 +103,7 @@ static int	in_lst(t_list **cpy, t_list *find, int t_jump, int size)
 	i = 0;
 	while (i++ < size && temp)
 	{
-		if (ft_strcmp(temp->content, find->content) == 0)
+		if (*(int *)temp->content == *(int *)find->content)
 			return (1);
 		temp = temp->next;
 	}

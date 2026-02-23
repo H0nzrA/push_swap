@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 10:08:29 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 14:03:38 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	print_command(const char *all_commands, int bench, int compute_disorder,
 			t_strat strat);
 
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
+void	chunk_based_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
 void	radix_lsd_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
 
 typedef struct s_ops
