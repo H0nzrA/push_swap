@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:47:57 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/23 15:15:02 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/23 15:41:06 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,6 +208,7 @@ static void	cmp_chunk(t_list **stack_a, t_list **stack_b, char **all_commands)
 			shortcut(stack_a, stack_b, all_commands, 2);
 		manage_cmp_chunk(&sq, &count, size, &i);
 	}
+    ft_lstclear(&str, free);
 }
 
 void	chunk_based_sort(t_list **stack_a, t_list **stack_b,
