@@ -6,81 +6,97 @@
 /*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 17:42:31 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 09:25:59 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 12:02:50 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
-static void	printstr_stderr(const char *str)
+static void	buff_add(char **buffer, char *str)
 {
-	ft_putstr_fd((char *)str, 2);
+	char	*temp;
+
+	if (!buffer)
+	{
+		*buffer = ft_strdup(str);
+		return ;
+	}
+	temp = ft_strjoin(*buffer, str);
+	free(*buffer);
+	*buffer = temp;
 }
 
-static void	printnbr_stderr(int num)
+static void	buff_add_nbr(char **buffer, int number)
 {
-	ft_putnbr_fd(num, 2);
+	char	*num;
+
+	num = ft_itoa(number);
+	buff_add(buffer, num);
+	free(num);
 }
 
-static void	print_bench_ops(t_ops *ops)
+static void	get_bench_ops(char **buffer, t_ops *ops)
 {
-	printstr_stderr("[bench]");
-	printstr_stderr(" sa: ");
-	printnbr_stderr(ops->sa);
-	printstr_stderr(" sb: ");
-	printnbr_stderr(ops->sb);
-	printstr_stderr(" ss: ");
-	printnbr_stderr(ops->ss);
-	printstr_stderr(" pa: ");
-	printnbr_stderr(ops->pa);
-	printstr_stderr(" pb: ");
-	printnbr_stderr(ops->pb);
-	printstr_stderr("\n");
-	printstr_stderr("[bench]");
-	printstr_stderr(" ra: ");
-	printnbr_stderr(ops->ra);
-	printstr_stderr(" rb: ");
-	printnbr_stderr(ops->rb);
-	printstr_stderr(" rr: ");
-	printnbr_stderr(ops->rr);
-	printstr_stderr(" rra: ");
-	printnbr_stderr(ops->rra);
-	printstr_stderr(" rrb: ");
-	printnbr_stderr(ops->rrb);
-	printstr_stderr(" rrr: ");
-	printnbr_stderr(ops->rrr);
+	buff_add(buffer, "[bench]");
+	buff_add(buffer, " sa: ");
+	buff_add_nbr(buffer, ops->sa);
+	buff_add(buffer, " sb: ");
+	buff_add_nbr(buffer, ops->sb);
+	buff_add(buffer, " ss: ");
+	buff_add_nbr(buffer, ops->ss);
+	buff_add(buffer, " pa: ");
+	buff_add_nbr(buffer, ops->pa);
+	buff_add(buffer, " pb: ");
+	buff_add_nbr(buffer, ops->pb);
+	buff_add(buffer, "\n");
+	buff_add(buffer, "[bench]");
+	buff_add(buffer, " ra: ");
+	buff_add_nbr(buffer, ops->ra);
+	buff_add(buffer, " rb: ");
+	buff_add_nbr(buffer, ops->rb);
+	buff_add(buffer, " rr: ");
+	buff_add_nbr(buffer, ops->rr);
+	buff_add(buffer, " rra: ");
+	buff_add_nbr(buffer, ops->rra);
+	buff_add(buffer, " rrb: ");
+	buff_add_nbr(buffer, ops->rrb);
+	buff_add(buffer, " rrr: ");
+	buff_add_nbr(buffer, ops->rrr);
 }
 
-static void	print_bench_info(t_ops *ops, int disorder, t_strat strat)
+static void	get_bench_info(char **buffer, t_ops *ops, int disorder,
+		t_strat strat)
 {
-	printstr_stderr("[bench] disorder:\t");
-	printnbr_stderr(disorder);
-	printstr_stderr("\n");
-	printstr_stderr("[bench] strategy:\t");
+	buff_add(buffer, "[bench] disorder:\t");
+	buff_add_nbr(buffer, disorder);
+	buff_add(buffer, "\n");
+	buff_add(buffer, "[bench] strategy:\t");
 	if (strat == SIMPLE)
-		printstr_stderr("Simple / O(n^2)");
+		buff_add(buffer, "Simple / O(n^2)\n");
 	else if (strat == MEDIUM)
-		printstr_stderr("Medium / <not implemented>");
+		buff_add(buffer, "Medium / <not implemented>\n");
 	else if (strat == COMPLEX)
-		printstr_stderr("Complex / O(n log n)");
+		buff_add(buffer, "Complex / O(n log n)\n");
 	else if (strat == ADAPTIVE)
-		printstr_stderr("Adaptive / <not implemented>");
-	printstr_stderr("\n");
-	printstr_stderr("[bench] total_ops:\t");
-	printnbr_stderr(ops->total);
-	printstr_stderr("\n");
-	print_bench_ops(ops);
-	printstr_stderr("\n");
+		buff_add(buffer, "Adaptive / <not implemented>\n");
+	buff_add(buffer, "[bench] total_ops:\t");
+	buff_add_nbr(buffer, ops->total);
+	buff_add(buffer, "\n");
+	get_bench_ops(buffer, ops);
+	buff_add(buffer, "\n");
 }
 
-void	print_bench(const char *all_commands, int disorder, t_strat strat)
+char	*get_bench(const char *all_commands, int disorder, t_strat strat)
 {
 	t_ops	ops;
+	char	*bench_info;
 
 	if (!all_commands)
-		return ;
+		return (NULL);
 	init_ops_bench(&ops);
 	parse_command_bench((char *)all_commands, &ops);
-	print_bench_info(&ops, disorder, strat);
+	bench_info = NULL;
+	get_bench_info(&bench_info, &ops, disorder, strat);
+	return (bench_info);
 }

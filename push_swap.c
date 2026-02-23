@@ -17,7 +17,7 @@ void	start_algo(t_list **list, t_strat strategy, int bench)
 {
 	t_list	*stack_b;
 	char	*all_commands;
-	int disorder;
+	int		disorder;
 
 	stack_b = NULL;
 	all_commands = NULL;

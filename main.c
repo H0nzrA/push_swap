@@ -17,11 +17,12 @@ int	main(int argc, char **argv)
 {
 	t_strat	strat;
 	t_list	*list;
+	int		bench;
 
 	if (argc < 2)
 		error();
 	list = NULL;
-	int bench = 0;
+	bench = 0;
 	parsing(&list, &argv[1], &strat, &bench);
 	if (ft_lstsize(list) < 2)
 		return (0);

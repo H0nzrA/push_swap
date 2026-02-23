@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 09:02:59 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 10:08:29 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	reverse_rotate(t_list **list);
 void	reverse_rotate_ab(t_list **a, t_list **b);
 
 void	take_command(char **all_commands, char *command);
-void	print_command(const char *all_commands, int bench,
-			int compute_disorder, t_strat strat);
+void	print_command(const char *all_commands, int bench, int compute_disorder,
+			t_strat strat);
 
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
 void	radix_lsd_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
@@ -73,7 +73,7 @@ typedef struct s_ops
 
 void	init_ops_bench(t_ops *ops);
 int		is_benchmark(const char *str);
-void	print_bench(const char *all_commands, int compute_disorder, t_strat strat);
+char	*get_bench(const char *all_commands, int disorder, t_strat strat);
 void	parse_command_bench(char *all_command, t_ops *ops);
 
 #endif

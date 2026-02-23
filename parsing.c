@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 09:19:39 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 10:15:53 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	get_argument(t_list **list, char **res, t_strat *strat)
 	while (res[++i])
 	{
 		if (is_benchmark(res[i]))
-			continue;
+			continue ;
 		if (is_strategy(res[i]) && !have_strat)
 		{
 			*strat = get_strategy(res[i]);
@@ -74,12 +74,7 @@ static void	get_argument(t_list **list, char **res, t_strat *strat)
 		}
 		val = (int *)malloc(sizeof(int));
 		if (!val || have_duplicate(list, ft_atoi(res[i])))
-		{
-			if (val)
-				free(val);
-			ft_lstclear(list, free);
-			error();
-		}
+			(free(val), ft_lstclear(list, free), error());
 		*val = ft_atoi(res[i]);
 		ft_lstadd_back(list, ft_lstnew(val));
 	}
