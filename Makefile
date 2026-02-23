@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/23 13:47:30 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/23 16:49:25 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ LIBFTPRINTF		= $(DIR_LIB)/libftprint.a
 MANDATORY = main push_swap managements \
 			parsing utils take_command \
 			command_push_swap command_rotate command_reverse \
-			compute_disorder minmax_sort \
+			compute_disorder \
+			adaptive_sort minmax_sort \
 			chunk_based_sort radix_lsd_sort \
 			benchmark benchmark_utils
 
