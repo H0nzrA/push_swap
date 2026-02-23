@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 17:42:31 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 13:43:07 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 15:25:17 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ static void	get_bench_info(char **buffer, t_ops *ops, int disorder,
 	else if (strat == SIMPLE)
 		buff_add(buffer, "Simple / O(n^2)\n");
 	else if (strat == MEDIUM)
-		buff_add(buffer, "Medium / O(√n)\n");
+		buff_add(buffer, "Medium / O(n√n)\n");
 	else if (strat == COMPLEX)
-		buff_add(buffer, "Complex / O(n log n)\n");
+		buff_add(buffer, "Complex / O(nlogn)\n");
 	else if (strat == ADAPTIVE)
 		buff_add(buffer, "Adaptive / <not implemented>\n");
 	buff_add(buffer, "[bench] total_ops:\t");
