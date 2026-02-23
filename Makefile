@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/21 17:43:11 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/23 08:15:06 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ MANDATORY = main push_swap managements \
 			parsing utils take_command \
 			command_push_swap command_rotate command_reverse \
 			compute_disorder minmax_sort radix_lsd_sort \
-			benchmark
+			benchmark benchmark_utils
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror

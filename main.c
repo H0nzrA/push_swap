@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:15 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 17:41:10 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 09:22:53 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	parsing(&list, &argv[1], &strat, &bench);
 	if (ft_lstsize(list) < 2)
 		return (0);
-	start_algo(&list, strat, &bench);
+	start_algo(&list, strat, bench);
 	ft_lstclear(&list, free);
 	return (0);
 }

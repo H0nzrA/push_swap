@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 17:40:37 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 09:19:39 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ static void	get_argument(t_list **list, char **res, t_strat *strat)
 	have_strat = 0;
 	while (res[++i])
 	{
+		if (is_benchmark(res[i]))
+			continue;
 		if (is_strategy(res[i]) && !have_strat)
 		{
 			*strat = get_strategy(res[i]);
