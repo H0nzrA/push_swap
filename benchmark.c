@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 17:42:31 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 12:02:50 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/23 13:43:07 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,20 @@ static void	get_bench_info(char **buffer, t_ops *ops, int disorder,
 		t_strat strat)
 {
 	buff_add(buffer, "[bench] disorder:\t");
-	buff_add_nbr(buffer, disorder);
+	buff_add_nbr(buffer, disorder / 100);
+	buff_add(buffer, ".");
+	if (disorder % 100 < 10)
+		buff_add(buffer, "0");
+	buff_add_nbr(buffer, disorder % 100);
+	buff_add(buffer, "%");
 	buff_add(buffer, "\n");
 	buff_add(buffer, "[bench] strategy:\t");
-	if (strat == SIMPLE)
+	if (disorder == 0)
+		buff_add(buffer, "Adaptive / O(1)\n");
+	else if (strat == SIMPLE)
 		buff_add(buffer, "Simple / O(n^2)\n");
 	else if (strat == MEDIUM)
-		buff_add(buffer, "Medium / <not implemented>\n");
+		buff_add(buffer, "Medium / O(√n)\n");
 	else if (strat == COMPLEX)
 		buff_add(buffer, "Complex / O(n log n)\n");
 	else if (strat == ADAPTIVE)
