@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/24 11:57:41 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:31:27 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ typedef struct s_ops
 
 void	init_ops_bench(t_ops *ops);
 int		is_benchmark(const char *str);
+void	buff_add(char **buffer, char *str);
+void	for_bench_adaptive(char **buffer, int disorder);
 char	*get_bench(const char *all_commands, int disorder, t_strat strat);
 void	parse_command_bench(char *all_command, t_ops *ops);
 

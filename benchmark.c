@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
+/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 17:42:31 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 16:44:59 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:34:58 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
-static void	buff_add(char **buffer, char *str)
+void	buff_add(char **buffer, char *str)
 {
 	char	*temp;
 
@@ -86,7 +86,7 @@ static void	get_bench_info(char **buffer, t_ops *ops, int disorder,
 	else if (strat == COMPLEX)
 		buff_add(buffer, "Complex / O(nlogn)\n");
 	else if (strat == ADAPTIVE)
-		buff_add(buffer, "Adaptive / <not implemented>\n");
+		for_bench_adaptive(buffer, disorder);
 	buff_add(buffer, "[bench] total_ops:\t");
 	buff_add_nbr(buffer, ops->total);
 	buff_add(buffer, "\n");
