@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:07:41 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 16:46:35 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:31:34 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	start_algo(t_list **list, t_strat strategy, int bench)
 	if (strategy == SIMPLE)
 		minmax_sort(list, &stack_b, &all_commands);
 	if (strategy == MEDIUM)
-		chunk_based_sort(list, &stack_b, &all_commands);
+		chunk_b_s(list, &stack_b, &all_commands);
 	if (strategy == COMPLEX)
 		radix_lsd_sort(list, &stack_b, &all_commands);
 	if (strategy == ADAPTIVE)
