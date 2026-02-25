@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:15 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 09:22:53 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ int	main(int argc, char **argv)
 	bench = 0;
 	parsing(&list, &argv[1], &strat, &bench);
 	if (ft_lstsize(list) < 2)
+	{
+		ft_lstclear(&list, free);
 		return (0);
+	}
 	start_algo(&list, strat, bench);
 	ft_lstclear(&list, free);
 	return (0);

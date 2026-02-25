@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 10:50:12 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 14:14:33 by trakotoz         ###   ########.fr       */
+/*   Created: 2026/01/30 07:59:08 by trakotoz          #+#    #+#             */
+/*   Updated: 2026/02/25 14:22:09 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*temp;
+# include <stdlib.h>
+# include <unistd.h>
 
-	if (!lst || !del)
-		return ;
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		(*del)((*lst)->content);
-		free(*lst);
-		*lst = temp;
-	}
-	*lst = NULL;
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
+
+char	*get_next_line(int fd);
+
+char	*extraction_line(char **str);
+char	*extraction_reminder(char *str);
+char	*join_read(char *ptr, char *buffer);
+
+int		has_newline(char *str);
+
+#endif

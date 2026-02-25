@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/25 11:18:28 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:21:42 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef enum e_strat
 }		t_strat;
 
 void	start_algo(t_list **list, t_strat strategy, int bench);
-
 void	parsing(t_list **list, char **argv, t_strat *strat, int *bench);
 
 int		is_strategy(const char *str);

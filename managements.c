@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   managements.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:10:34 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/16 16:42:16 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "common.h"
 
 void	error(void)
 {

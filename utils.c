@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:45:49 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 11:18:49 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:43:39 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,14 @@ int	is_valid_digit(const char *str)
 	if (val > 2147483647 || val < -2147483648)
 		return (0);
 	return (1);
+}
+
+char	**parse_arguments(char *str)
+{
+	char	**res;
+
+	res = ft_split(str, ' ');
+	if (!res)
+		return (NULL);
+	return (res);
 }

@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/25 11:20:49 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/25 14:31:38 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,15 +22,17 @@ DIR_LIB			= ft_printf
 LIBFTPRINTF		= $(DIR_LIB)/libftprint.a
 
 UTILS		= command_push_swap command_rotate command_reverse \
-			compute_disorder utils \
+			compute_disorder utils managements \
 
-MANDATORY	= $(UTILS) main push_swap managements \
+MANDATORY	= $(UTILS) main push_swap \
 			parsing take_command \
 			adaptive_sort minmax_sort \
 			chunk_based_sort radix_lsd_sort chunk_based_sort_utils \
 			benchmark benchmark_utils strategy_management
 
-BONUS		= $(UTILS) main_bonus
+BONUS		= $(UTILS) main_bonus parsing_bonus \
+			  get_next_line_bonus get_next_line_utils_bonus \
+			  checker_bonus utils_bonus
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror

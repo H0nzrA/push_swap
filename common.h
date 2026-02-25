@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 10:57:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 10:59:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		compute_disorder(t_list **list);
 void	error(void);
 
 int		is_valid_digit(const char *str);
+char	**parse_arguments(char *str);
 
 long	ft_atoi_long(const char *str);
 int		ft_strcmp(const char *s1, const char *s2);
