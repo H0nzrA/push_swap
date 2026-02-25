@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/25 14:31:38 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/25 14:52:32 by tiana-an         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,6 @@ bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(OBJECTS_BONUS) $(LIBFTPRINTF)
 	$(CC) $(CFLAGS) $(OBJECTS_BONUS) -L$(DIR_LIB) -lftprintf -o $(NAME_BONUS) 
-	@echo "${C_GREEN}Build Cheker (bonus part)${C_RESET}"
+	@echo "${C_GREEN}Build Checker (bonus part)${C_RESET}"
 
 .PHONY : all clean fclean re
