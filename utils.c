@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:45:49 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 17:42:18 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 10:52:06 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,4 @@ int	is_valid_digit(const char *str)
 	if (val > 2147483647 || val < -2147483648)
 		return (0);
 	return (1);
-}
-
-int	is_strategy(const char *str)
-{
-	if (ft_strcmp(str, "--adaptive") == 0)
-		return (1);
-	if (ft_strcmp(str, "--simple") == 0)
-		return (1);
-	if (ft_strcmp(str, "--medium") == 0)
-		return (1);
-	if (ft_strcmp(str, "--complex") == 0)
-		return (1);
-	return (0);
-}
-
-t_strat	get_strategy(const char *str)
-{
-	if (ft_strcmp(str, "--adaptive") == 0)
-		return (ADAPTIVE);
-	if (ft_strcmp(str, "--simple") == 0)
-		return (SIMPLE);
-	if (ft_strcmp(str, "--medium") == 0)
-		return (MEDIUM);
-	if (ft_strcmp(str, "--complex") == 0)
-		return (COMPLEX);
-	return (ADAPTIVE);
 }

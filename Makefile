@@ -6,11 +6,12 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/23 16:49:25 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/25 10:57:25 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME 		= push_swap
+NAME_BONUS	= checker
 
 C_RESET		= \033[0m
 C_GREEN		= \033[032m
@@ -20,13 +21,16 @@ C_MAGNETA	= \033[035m
 DIR_LIB			= ft_printf
 LIBFTPRINTF		= $(DIR_LIB)/libftprint.a
 
-MANDATORY = main push_swap managements \
-			parsing utils take_command \
-			command_push_swap command_rotate command_reverse \
-			compute_disorder \
+UTILS		= command_push_swap command_rotate command_reverse \
+			compute_disorder utils \
+
+MANDATORY	= $(UTILS) main push_swap managements \
+			parsing take_command \
 			adaptive_sort minmax_sort \
 			chunk_based_sort radix_lsd_sort \
-			benchmark benchmark_utils
+			benchmark benchmark_utils strategy_management
+
+BONUS		= $(UTILS) main_bonus
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
@@ -35,7 +39,8 @@ RM = rm -rf
 
 OBJ_DIR = obj
 
-OBJECTS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(MANDATORY)))
+OBJECTS			= $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(MANDATORY)))
+OBJECTS_BONUS	= $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(BONUS)))
 
 all : $(NAME)
 
@@ -59,9 +64,15 @@ clean :
 
 fclean : clean
 	@$(MAKE) fclean -sC $(DIR_LIB)
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_BONUS)
 	@echo "${C_MAGNETA}Clean all generated files${C_RESET}"
 
 re : fclean all
+
+bonus : $(NAME_BONUS)
+
+$(NAME_BONUS) : $(OBJECTS_BONUS) $(LIBFTPRINTF)
+	$(CC) $(CFLAGS) $(OBJECTS_BONUS) -L$(DIR_LIB) -lftprintf -o $(NAME_BONUS) 
+	@echo "${C_GREEN}Build Cheker (bonus part)${C_RESET}"
 
 .PHONY : all clean fclean re
