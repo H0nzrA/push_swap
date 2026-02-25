@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/25 14:21:42 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:05:59 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int		have_bench(const char **argv);
 t_strat	get_strategy(const char *str);
 
 void	take_command(char **all_commands, char *command);
-void	print_command(const char *all_commands, int bench, int compute_disorder,
-			t_strat strat);
 
 int		find_square_root(int n);
 
@@ -66,8 +64,11 @@ typedef struct s_ops
 void	init_ops_bench(t_ops *ops);
 int		is_benchmark(const char *str);
 void	buff_add(char **buffer, char *str);
-void	for_bench_adaptive(char **buffer, int disorder);
-char	*get_bench(const char *all_commands, int disorder, t_strat strat);
+void	for_bench_adaptive(char **buffer, int disorder, int size);
+char	*get_bench(const char *all_commands, int disorder, t_strat strat,
+			int size);
 void	parse_command_bench(char *all_command, t_ops *ops);
+void	print_bench(const char *all_commands, int compute_disorder,
+			t_strat strat, int size);
 
 #endif

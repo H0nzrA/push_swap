@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:07:41 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 11:19:36 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:06:47 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	print_bench_sorted(t_strat strategy, int bench)
 	if (!bench)
 		return ;
 	all_commands = "";
-	print_command(all_commands, bench, 0, strategy);
+	print_bench(all_commands, 0, strategy, 0);
 }
 
 void	start_algo(t_list **list, t_strat strategy, int bench)
@@ -45,7 +45,9 @@ void	start_algo(t_list **list, t_strat strategy, int bench)
 		radix_lsd_sort(list, &stack_b, &all_commands);
 	if (strategy == ADAPTIVE)
 		adaptive_sort(list, &stack_b, &all_commands);
-	print_command(all_commands, bench, disorder, strategy);
+	ft_printf("%s", all_commands);
+	if (bench)
+		print_bench(all_commands, disorder, strategy, ft_lstsize(*list));
 	free(all_commands);
 	ft_lstclear(&stack_b, free);
 }

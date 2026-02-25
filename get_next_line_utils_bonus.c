@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 08:00:35 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 13:27:56 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:15:55 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ char	*extraction_line(char **str_ptr)
 		return (NULL);
 	while (str[count] && str[count] != '\n')
 		count++;
-	// if (str[count] == '\n')
-	// 	count++;
 	line = (char *)malloc(sizeof(char) * (count + 1));
 	if (!line)
 		return (NULL);

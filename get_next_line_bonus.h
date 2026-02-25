@@ -6,12 +6,12 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:59:08 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 14:22:09 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:15:36 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
