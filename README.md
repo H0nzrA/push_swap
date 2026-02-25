@@ -43,3 +43,20 @@ push_swap is an algorithmic project that involves sorting a list of integers usi
 ```bash
     ARG="4 67 3 87 23"; ./push_swap --simple $ARG | wc -l
 ```
+
+## Team Contributions
+
+### tiana-an
+- Implementation of stack operations (`sa`, `sb`, `ra`, `rra`, etc.)
+- Development of the medium and adaptive strategy (`chunked_based_sort`)
+- Participation in the design of `minmax_sort`
+- Co-development of `compute_disorder`
+
+### trakotoz
+- Error handling and argument parsing
+- Implementation of the complex strategy (`radix_lsd_sort`)
+- Benchmark implementation and performance testing
+- Participation in the design of `minmax_sort`
+- Co-development of `compute_disorder`
+
+> The simple strategy (**minmax_sort**), the disorder computation logic and the remaining implementation details were designed and implemented collaboratively.
