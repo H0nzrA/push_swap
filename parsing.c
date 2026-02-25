@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 17:38:18 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,21 @@ static int	have_duplicate(t_list **list, int num)
 	return (0);
 }
 
-static void	get_argument(t_list **list, char **res, t_strat *strat)
+static void	get_argument(t_list **list, char **res, t_strat *strat,
+		int *have_strat)
 {
 	int	i;
 	int	*val;
-	int	have_strat;
 
 	i = -1;
-	have_strat = 0;
 	while (res[++i])
 	{
 		if (is_benchmark(res[i]))
 			continue ;
-		if (is_strategy(res[i]) && !have_strat)
+		if (is_strategy(res[i]) && !*have_strat)
 		{
 			*strat = get_strategy(res[i]);
-			have_strat = 1;
+			*have_strat = 1;
 			continue ;
 		}
 		val = (int *)malloc(sizeof(int));
@@ -70,31 +69,36 @@ static void	get_argument(t_list **list, char **res, t_strat *strat)
 	}
 }
 
+static void	free_split(char **res)
+{
+	int	i;
+
+	i = 0;
+	while (res[i])
+		free(res[i++]);
+	free(res);
+}
+
 void	parsing(t_list **list, char **argv, t_strat *strat, int *bench)
 {
 	char	**res;
-	int		i;
 	int		k;
+	int		have_strat;
 
 	k = -1;
+	have_strat = 0;
 	while (argv[++k] != NULL)
 	{
 		res = parse_arguments(argv[k]);
 		if (!is_valid_arguments(res))
 		{
-			i = 0;
-			while (res[i])
-				free(res[i++]);
-			free(res);
 			ft_lstclear(list, free);
+			free_split(res);
 			error();
 		}
 		if (have_bench((const char **)res))
 			*bench = 1;
-		get_argument(list, res, strat);
-		i = 0;
-		while (res[i])
-			free(res[i++]);
-		free(res);
+		get_argument(list, res, strat, &have_strat);
+		free_split(res);
 	}
 }
