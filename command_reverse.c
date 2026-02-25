@@ -6,12 +6,12 @@
 /*   By: tiana-an <tiana-an@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:55:09 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/18 14:45:45 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 17:41:33 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
-#include "push_swap.h"
+#include "common.h"
 
 void	reverse_rotate_ab(t_list **a, t_list **b)
 {

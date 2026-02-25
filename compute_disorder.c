@@ -6,12 +6,12 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:27:54 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 15:49:53 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 17:44:04 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
-#include "push_swap.h"
+#include "common.h"
 
 int	compute_disorder(t_list **list)
 {
