@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/25 11:16:13 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:18:28 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ void	take_command(char **all_commands, char *command);
 void	print_command(const char *all_commands, int bench, int compute_disorder,
 			t_strat strat);
 
+int		find_square_root(int n);
+
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
-void	chunk_b_s(t_list **stack_a, t_list **stack_b, char **all_commands);
+void	chunk_based_sort(t_list **stack_a, t_list **stack_b,
+			char **all_commands);
 int		find_square_root(int n);
 t_list	*ft_sort(t_list *argv);
 void	manage_part(t_list **list, char **all_commands);

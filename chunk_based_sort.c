@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:47:57 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/24 11:30:14 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:19:04 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	cmp_chunk(t_list **stack_a, t_list **stack_b, char **all_commands)
 	ft_lstclear(&str, free);
 }
 
-void	chunk_b_s(t_list **stack_a, t_list **stack_b,
+void	chunk_based_sort(t_list **stack_a, t_list **stack_b,
 		char **all_commands)
 {
 	cmp_chunk(stack_a, stack_b, all_commands);

@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:47:01 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/24 12:32:46 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:19:53 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	adaptive_sort(t_list **stack_a, t_list **stack_b, char **all_commands)
 	if (disorder < 2000)
 		minmax_sort(stack_a, stack_b, all_commands);
 	if (2000 <= disorder && disorder < 5000)
-		chunk_b_s(stack_a, stack_b, all_commands);
+		chunk_based_sort(stack_a, stack_b, all_commands);
 	if (disorder >= 5000)
 		radix_lsd_sort(stack_a, stack_b, all_commands);
 }

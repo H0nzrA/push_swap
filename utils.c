@@ -6,11 +6,11 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:45:49 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 10:52:06 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:18:49 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "common.h"
 
 long	ft_atoi_long(const char *str)
 {

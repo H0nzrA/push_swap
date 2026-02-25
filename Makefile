@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/25 11:15:53 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/25 11:20:49 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ UTILS		= command_push_swap command_rotate command_reverse \
 MANDATORY	= $(UTILS) main push_swap managements \
 			parsing take_command \
 			adaptive_sort minmax_sort \
-			chunk_based_sort radix_lsd_sort \
+			chunk_based_sort radix_lsd_sort chunk_based_sort_utils \
 			benchmark benchmark_utils strategy_management
 
 BONUS		= $(UTILS) main_bonus

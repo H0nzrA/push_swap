@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CHECKER_BONUS_H
-#define	CHECKER_BONUS_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-#include "common.h"
+# include "common.h"
 
 void	parsing(t_list **list, char **argv);
 
