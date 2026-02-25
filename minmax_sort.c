@@ -6,10 +6,11 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 15:50:17 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 13:53:08 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "common.h"
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
@@ -74,6 +75,8 @@ void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands)
 		if (ft_lstsize(*stack_a) == 1)
 			break ;
 		do_part(stack_a, all_commands);
+		if (compute_disorder(stack_a) == 0)
+			break ;
 		push(stack_a, stack_b);
 		take_command(all_commands, "pb");
 	}

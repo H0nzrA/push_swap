@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:47:01 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 11:19:53 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

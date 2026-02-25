@@ -3,25 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/23 10:15:53 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
-
-static char	**parse_arguments(char *str)
-{
-	char	**res;
-
-	res = ft_split(str, ' ');
-	if (!res)
-		return (NULL);
-	return (res);
-}
 
 static int	is_valid_arguments(char **res)
 {

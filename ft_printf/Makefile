@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/04 11:04:36 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/16 09:00:02 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/02/25 11:47:45 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ re		: fclean all
 $(NAME)			: $(OBJECTS) $(LIBFT)
 	@cp $(LIBFT) $(NAME)
 	$(AR) $(NAME) $(OBJECTS)
-	@echo "${C_GREEN}Build finished (Mandatory part)${C_RESET}"
+	@echo "${C_GREEN}Build ft_printf${C_RESET}"
 
 $(OBJ_DIR)/%.o	: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@

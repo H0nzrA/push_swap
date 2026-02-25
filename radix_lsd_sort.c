@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_lsd_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 17:07:51 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/21 16:38:11 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
