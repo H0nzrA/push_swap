@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_based_sort.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
+/*   By: tiana-an <tiana-an@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:47:57 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/25 11:19:04 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 13:55:55 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

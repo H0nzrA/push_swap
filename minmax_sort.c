@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minmax_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
+/*   By: tiana-an <tiana-an@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/26 12:28:16 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 13:56:16 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
