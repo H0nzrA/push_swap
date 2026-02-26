@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:31:37 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/26 08:26:04 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 13:49:03 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

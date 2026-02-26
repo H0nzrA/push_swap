@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 09:07:41 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 16:06:47 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 13:49:10 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 10:56:33 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 13:48:13 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

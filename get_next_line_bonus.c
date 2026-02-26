@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trakotoz <trakotoz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:59:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 13:21:55 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 13:47:58 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
