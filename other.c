@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 11:46:02 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/26 15:24:13 by tiana-an         ###   ########.fr       */
+/*   Updated: 2026/02/26 15:58:47 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ int	find_square_root(int n)
 	}
 	return (0);
 }
-
