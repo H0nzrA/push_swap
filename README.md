@@ -35,15 +35,6 @@ push_swap is an algorithmic project that involves sorting a list of integers usi
 
 -   `rrr`: rra and rrb at the same time.
 
-### Compilation
-```bash
-    make
-```
-***This is an usage example:***
-```bash
-    ARG="4 67 3 87 23"; ./push_swap --simple $ARG | wc -l
-```
-
 ## Team Contributions
 
 ### tiana-an
@@ -60,3 +51,155 @@ push_swap is an algorithmic project that involves sorting a list of integers usi
 - Co-development of `compute_disorder`
 
 > The simple strategy (**minmax_sort**), the disorder computation logic and the remaining implementation details were designed and implemented collaboratively.
+
+## Instruction
+The compilation is done using a **`Makefile`** with the `cc` compiler followed by the following flags:  
+- `-Wall`: main warnings;  
+- `-Wextra`: additional warnings;  
+- `-Werror`: turns warnings into errors.
+
+The Makefile includes the following rules: $(NAME), all, clean, fclean, and re.
+
+-   Build:
+```bash
+    make
+    # or
+    make all
+```
+Compiles the project and generates the executable: **push_swap**.
+
+---
+-   Clean object files:
+```bash
+    make clean
+```
+Removes all compiled object files (.o).
+
+---
+-   Full clean:
+```bash
+    make fclean
+```
+Removes all object files (.o) as well as the generated library libft.a.
+
+---
+-   Rebuild:
+```bash
+    make re
+```
+Performs a complete rebuild of the project (equivalent to fclean followed by all).
+
+---
+### This is an usage example:
+***Compilation***:
+```bash
+    make
+```
+***run the executable***:
+```bash
+    ARG="4 67 3 87 23"; ./push_swap --simple $ARG
+```
+
+### Program Behavior
+When executing the program, it will output the list of instructions required to sort the given stack.
+
+> If an error condition is detected, the program will instead display: **"Error"**.
+
+## Resources
+The following resources were helpful for understanding sorting algorithms, stack operations, and optimization strategies:
+
+-   [Sorting Algorithms — Visualgo](https://visualgo.net/en/sorting)
+-   [Youtube/push_swap tutorial](https://www.youtube.com/watch?v=4dMsuxfqufg&t=23s)
+>***AI usage:***  
+    AI tools were used solely for conceptual explanations and learning support. The design, implementation, and final code were developed independently.
+
+## Algorithm Selection and Justification
+>**`1/`** Simple Algorithm — O(n²)
+
+-   Method: Min/Max Extraction Strategy
+
+    For small datasets or nearly sorted inputs, a simple selection-based approach is used.
+
+-   The algorithm repeatedly:
+
+    Finds the minimum (or maximum) value in stack A
+
+    Pushes it to stack B
+
+    Restores the sorted order back to stack A
+
+-   **Justification**:
+
+    Easy to implement and highly reliable
+
+    Efficient for small input sizes
+
+    Low overhead in instruction management
+
+    Suitable when the disorder level is very low
+
+    Although its theoretical complexity is O(n²), it performs well when the dataset is small or almost sorted.
+
+---
+>**`2/`** Medium Algorithm — O(n√n)
+
+-   Method: Chunk-Based Sorting (√n chunks)
+
+    For moderately sized datasets, the stack is divided into approximately √n chunks based on indexed values.
+
+-   The algorithm:
+
+    Pushes elements chunk by chunk from A to B
+
+    Organizes elements strategically in B
+
+    Pushes them back to A in sorted order
+
+-   **Justification**:
+
+    Reduces unnecessary rotations
+
+    Balances instruction count and execution time
+
+    More efficient than quadratic methods for medium inputs
+
+    Chunking significantly reduces total operations compared to naive selection strategies.
+
+---
+>**`3/`** Complex Algorithm — O(n log n)
+
+-   Method: Radix Sort Adaptation (LSD or MSD)
+
+    For large datasets, a binary radix sort adaptation is used.
+
+-   Steps:
+
+    Normalize values through indexing
+
+    Sort numbers bit by bit
+
+    Use stack operations to simulate bucket distribution
+
+-   **Justification**:
+
+    Deterministic performance
+
+    Highly scalable
+
+    Well-suited for push_swap constraints
+
+    Efficient instruction count for large n
+
+    Radix sort ensures predictable O(n log n) complexity within the stack-based operation model.
+
+---
+>**`4/`** Custom Adaptive Algorithm — Disorder-Based Strategy
+
+A custom adaptive strategy was designed to dynamically select the most appropriate internal algorithm depending on the measured disorder level of the input.
+
+-   Disorder Measurement
+
+    Disorder is evaluated as the ratio of misplaced elements relative to the total size.
+---
+
+>***Project completed in accordance with 42 School standards.***
