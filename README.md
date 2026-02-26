@@ -110,6 +110,7 @@ The following resources were helpful for understanding sorting algorithms, stack
 
 -   [Sorting Algorithms — Visualgo](https://visualgo.net/en/sorting)
 -   [Youtube/push_swap tutorial](https://www.youtube.com/watch?v=4dMsuxfqufg&t=23s)
+-   [PUSH_SWAP VISUALIZER](https://push-swap42-visualizer.vercel.app/)
 >***AI usage:***  
     AI tools were used solely for conceptual explanations and learning support. The design, implementation, and final code were developed independently.
 
@@ -200,6 +201,103 @@ A custom adaptive strategy was designed to dynamically select the most appropria
 -   Disorder Measurement
 
     Disorder is evaluated as the ratio of misplaced elements relative to the total size.
+---
+
+## Bonus – Checker (push_swap)
+
+>Objective:
+
+-   The bonus consists of implementing a checker program that:
+
+    Takes a list of integers as arguments (same as push_swap)
+
+    Reads a sequence of instructions from standard input (stdin)
+
+    Applies these instructions to the stacks
+
+    Checks whether the stack is correctly sorted at the end
+
+>Implementation Method:
+
+**`1`** Reading Instructions
+
+We use:
+
+get_next_line(0);  
+***0 corresponds to standard input (stdin)***
+
+Each line read represents one instruction (sa, pb, ra, etc.)
+
+Each instruction is validated and applied immediately
+
+---
+**`2`** Applying Instructions
+
+For each instruction read:
+
+-   We compare it with the list of valid instructions
+
+-   If valid → apply it to stack_a and/or stack_b
+
+-   If invalid → display Error and exit
+
+-   Supported instructions:
+
+```
+sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr
+```
+---
+
+**`3`** Final Checks
+
+After executing all instructions, we perform the following checks:
+
+- Stack A must be sorted in ascending order  
+    If not sorted → KO
+
+- Stack B must be empty  
+    If stack_b still contains elements → KO
+
+- Stack A must not be empty  
+    If stack_a is NULL → KO
+---
+
+>Validation Logic
+
+-   Pseudo-algorithm:
+
+    Read instructions using get_next_line  
+        -> Validate instruction  
+        -> Apply instruction `(Final checks)`
+---
+
+>Example Usage
+
+```bash
+./push_swap 3 2 1 | ./checker 3 2 1
+```
+
+Expected output:  
+**OK**
+
+>Data Structures
+
+We use:
+
+Two linked list stacks (stack_a and stack_b)  
+An is_sorted() function to check ascending order  
+Dedicated functions to apply each instruction
+
+>Summary
+
+Our checker:
+
+- Reads instructions from stdin  
+- Applies them sequentially  
+- Verifies:  
+    stack_a is sorted  
+    stack_b is empty  
+    Prints OK or KO
 ---
 
 >***Project completed in accordance with 42 School standards.***
