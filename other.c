@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 11:46:02 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/26 11:47:09 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 15:24:13 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,20 @@ int	find_min_index(t_list **list)
 	}
 	return (index);
 }
+
+int	find_square_root(int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n / 2)
+	{
+		if (i * i == n)
+			return (i);
+		if (i * i < n && (i + 1) * (i + 1) > n)
+			return (i);
+		i++;
+	}
+	return (0);
+}
+

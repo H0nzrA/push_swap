@@ -6,28 +6,12 @@
 /*   By: tiana-an <tiana-an@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 11:37:24 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/26 11:46:37 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 15:24:15 by tiana-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
-
-int	find_square_root(int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < n / 2)
-	{
-		if (i * i == n)
-			return (i);
-		if (i * i < n && (i + 1) * (i + 1) > n)
-			return (i);
-		i++;
-	}
-	return (0);
-}
 
 static t_list	*ft_cpy(t_list *argv)
 {
