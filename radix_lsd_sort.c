@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 17:07:51 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 14:31:44 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 08:48:18 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,18 @@ static void	sort_array(int *res, int size)
 {
 	int	i;
 	int	j;
-	int	temp;
+	int	key;
 
 	if (!res)
 		return ;
 	i = 0;
-	j = 0;
-	while (i < size)
+	while (++i < size)
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (res[i] > res[j])
-			{
-				temp = res[i];
-				res[i] = res[j];
-				res[j] = temp;
-			}
-			j++;
-		}
-		i++;
+		j = i;
+		key = res[i];
+		while (--j >= 0 && res[j] > key)
+			res[j + 1] = res[j];
+		res[j + 1] = key;
 	}
 }
 
