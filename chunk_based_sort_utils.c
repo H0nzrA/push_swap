@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 11:37:24 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/25 11:17:56 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 11:46:37 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,6 @@ t_list	*ft_sort(t_list *argv)
 		tmp = tmp->next;
 	}
 	return (copy);
-}
-
-static int	find_max_index(t_list **list)
-{
-	int		max;
-	int		index;
-	int		i;
-	t_list	*temp;
-
-	temp = *list;
-	max = *(int *)temp->content;
-	index = 0;
-	i = 0;
-	while (temp)
-	{
-		if (max < *(int *)temp->content)
-		{
-			max = *(int *)temp->content;
-			index = i;
-		}
-		temp = temp->next;
-		i++;
-	}
-	return (index);
 }
 
 void	manage_part(t_list **list, char **all_commands)

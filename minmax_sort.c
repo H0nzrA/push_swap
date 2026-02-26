@@ -6,37 +6,13 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:09:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 13:53:08 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:28:16 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
-
-static int	find_min_index(t_list **list)
-{
-	int		min;
-	int		index;
-	int		i;
-	t_list	*temp;
-
-	temp = *list;
-	min = *(int *)(temp->content);
-	index = 0;
-	i = 0;
-	while (temp)
-	{
-		if (min > *(int *)(temp->content))
-		{
-			min = *(int *)(temp->content);
-			index = i;
-		}
-		temp = temp->next;
-		i++;
-	}
-	return (index);
-}
 
 static void	do_part(t_list **list, char **all_commands)
 {
@@ -67,13 +43,64 @@ static void	do_part(t_list **list, char **all_commands)
 	take_command(all_commands, "rra");
 }
 
+static void	sort_max_index(t_list **stack_a, char **all_commands)
+{
+	if (find_max_index(stack_a) == 0)
+	{
+		rotate(stack_a);
+		take_command(all_commands, "ra");
+		if (find_min_index(stack_a) != 0)
+		{
+			swap(stack_a);
+			take_command(all_commands, "sa");
+		}
+	}
+	else if (find_max_index(stack_a) == 1)
+	{
+		reverse_rotate(stack_a);
+		take_command(all_commands, "rra");
+	}
+	else
+	{
+		swap(stack_a);
+		take_command(all_commands, "sa");
+	}
+}
+
+static void	sort_in_one_list(t_list **stack_a, char **all_commands)
+{
+	int	size;
+
+	if (compute_disorder(stack_a) == 0)
+		return ;
+	size = ft_lstsize(*stack_a);
+	if (size == 2)
+	{
+		swap(stack_a);
+		take_command(all_commands, "sa");
+		return ;
+	}
+	if (find_min_index(stack_a) == 0)
+	{
+		rotate(stack_a);
+		swap(stack_a);
+		reverse_rotate(stack_a);
+		take_command(all_commands, "ra\nsa\nrra");
+		return ;
+	}
+	sort_max_index(stack_a, all_commands);
+}
+
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands)
 {
 	*stack_b = NULL;
 	while (*stack_a)
 	{
-		if (ft_lstsize(*stack_a) == 1)
+		if (ft_lstsize(*stack_a) <= 3)
+		{
+			sort_in_one_list(stack_a, all_commands);
 			break ;
+		}
 		do_part(stack_a, all_commands);
 		if (compute_disorder(stack_a) == 0)
 			break ;

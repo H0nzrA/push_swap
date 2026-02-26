@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 09:04:21 by trakotoz          #+#    #+#              #
-#    Updated: 2026/02/25 14:52:32 by tiana-an         ###   ########.fr        #
+#    Updated: 2026/02/26 11:47:32 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ MANDATORY	= $(UTILS) main push_swap \
 			parsing take_command \
 			adaptive_sort minmax_sort \
 			chunk_based_sort radix_lsd_sort chunk_based_sort_utils \
-			benchmark benchmark_utils strategy_management
+			benchmark benchmark_utils strategy_management \
+			other
 
 BONUS		= $(UTILS) main_bonus parsing_bonus \
 			  get_next_line_bonus get_next_line_utils_bonus \

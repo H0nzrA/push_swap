@@ -6,7 +6,7 @@
 /*   By: tiana-an <tiana-an@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:34:29 by tiana-an          #+#    #+#             */
-/*   Updated: 2026/02/25 16:05:59 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/26 11:47:06 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ t_strat	get_strategy(const char *str);
 void	take_command(char **all_commands, char *command);
 
 int		find_square_root(int n);
+int		find_max_index(t_list **list);
+int		find_min_index(t_list **list);
 
 void	minmax_sort(t_list **stack_a, t_list **stack_b, char **all_commands);
 void	chunk_based_sort(t_list **stack_a, t_list **stack_b,
