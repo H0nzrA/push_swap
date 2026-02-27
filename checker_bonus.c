@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 11:49:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/02/25 13:49:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/02/27 11:44:41 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ void	start_execution(t_list **stack_a)
 	char	*command;
 	int		eval;
 
-	command = get_next_line(0);
 	stack_b = NULL;
-	while (command)
+	while (1)
 	{
+		command = get_next_line(0);
+		if (command == NULL)
+			break ;
 		apply_command(command, stack_a, &stack_b);
 		free(command);
-		command = get_next_line(0);
 	}
 	eval = evaluation(stack_a, &stack_b);
 	if (!eval)
@@ -60,4 +61,6 @@ void	apply_command(char *command, t_list **stack_a, t_list **stack_b)
 		reverse_rotate(stack_b);
 	else if (ft_strcmp(command, "rrr") == 0)
 		reverse_rotate_ab(stack_a, stack_b);
+	else 
+		error();
 }
