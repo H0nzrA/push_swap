@@ -217,6 +217,12 @@ A custom adaptive strategy was designed to dynamically select the most appropria
 
     Checks whether the stack is correctly sorted at the end
 
+>Compilation:
+To compile the bonus part, as the `push_swap` project, we use `Makefile`:
+```bash
+    make bonus # This will generate the checker
+```
+
 >Implementation Method:
 
 **`1`** Reading Instructions
