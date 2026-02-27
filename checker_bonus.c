@@ -61,6 +61,6 @@ void	apply_command(char *command, t_list **stack_a, t_list **stack_b)
 		reverse_rotate(stack_b);
 	else if (ft_strcmp(command, "rrr") == 0)
 		reverse_rotate_ab(stack_a, stack_b);
-	else 
+	else
 		error();
 }
